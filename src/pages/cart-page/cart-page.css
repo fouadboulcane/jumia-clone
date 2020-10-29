@@ -1,0 +1,25 @@
+
+.empty-cart-icon{
+    background:white;
+    width:140px;
+    height:140px;
+    display:flex;
+    margin:auto;
+    justify-content:center;
+    align-items:center;
+    color:rgb(240, 239, 239);
+    border-radius:100%;
+    font-size:65px;
+}
+
+.cart-page-title{
+    margin-left:-15px !important;
+}
+
+.cart-item-action a {
+    font-size:13px;
+}
+
+.cart-item-action a:hover{
+    color:rgb(255, 194, 80);
+}

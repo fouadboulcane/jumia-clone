@@ -1,0 +1,40 @@
+
+.checkout-title{
+    color:rgb(190, 188, 188);
+    font-weight:700;
+    font-size:13px;
+}
+
+.checkout-subtitle{
+    font-size:13px;
+    
+}
+
+.checkout__checkout-item{
+    font-size:13px;
+}
+
+.checkout-form label{
+    font-size:13px;
+    color:gray;
+}
+
+.no-display{
+    display:none;
+}
+
+.checkout-form_col{
+    display:flex;
+    flex-direction: column;
+    flex:1
+}
+
+.checkout__checkout-section-mark{
+    color:lightgray;
+    margin-top:1px;
+    font-size:20px;
+}
+
+.green-check{
+    color:greenyellow;
+}

@@ -1,0 +1,14 @@
+.cover{
+    padding:8px;
+}
+
+.cover > .row{
+    margin:0 !important;
+}
+
+.cover img{
+    height:250px;
+    padding:0;
+    border-radius:4px;
+    object-fit:fill;
+}

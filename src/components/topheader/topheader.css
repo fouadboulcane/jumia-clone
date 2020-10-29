@@ -1,0 +1,45 @@
+.topheader {
+    height: 30px;
+    background: rgb(240, 240, 240);
+  }
+  
+  .in_topheader {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+  }
+  
+  .topheader__leftnav {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+  
+  .topheader__leftnav__icon {
+    color: orange;
+    font-size: 1.1rem;
+    margin-right: 5px;
+  }
+  
+  .topheader__leftnav__link {
+    color: orange;
+  }
+  .topheader__leftnav__link:hover {
+    color: orange;
+  }
+  
+  .topheader__rightnav {
+    display: flex;
+  }
+  
+  .divider {
+    height: 17px;
+    width: 1px;
+    background: lightgray;
+    margin: auto;
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+  

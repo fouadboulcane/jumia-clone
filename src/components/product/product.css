@@ -1,0 +1,28 @@
+.product-list-page_product-item{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.product-list-page_product-item > .addcart-box{
+    visibility: hidden;
+    padding:0;
+    display:flex;
+    flex-direction:space-between;
+}
+
+.product-list-page_product-item > .addcart-box Button{
+    font-size:12px;
+    font-weight:700;
+    margin:0 !important;
+    margin-top:10px !important;
+}
+
+.product-list-page_product-item:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+.product-list-page_product-item:hover .addcart-box{
+    visibility: visible;
+}
+

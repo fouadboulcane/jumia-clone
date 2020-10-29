@@ -1,0 +1,112 @@
+
+
+.footer{
+    min-height:400px;
+    margin-top:40px;
+    color:white;
+    background:black;
+    font-family: ;
+}
+
+.footer__logo{
+    fill:white;
+}
+
+.footer .row{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.footer_top{
+    background:#252525;
+}
+
+.footer_middle{
+    background:#303030;
+}
+
+.footer_bottom{
+
+}
+
+
+.footer_section-title{
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.footer_section{
+    margin-bottom:0px;
+    
+}
+
+
+.footer_section-content{
+    font-size:12px;
+    list-style: none;
+    color:white;
+}
+
+.footer_section-content a{
+    color:lightgray;
+}
+.footer_section-content a:hover{
+    color:white;
+}
+
+.last-section{
+    padding:0 !important;
+}
+
+.footer_icons{
+    margin-right:20px;
+    font-size:20px;
+}
+
+.footer_icons i{
+    color:white !important;
+}
+
+.footer_offers-form{
+    margin-top:-4px;
+    margin-left:0px;
+    padding:0px !important;
+}
+
+.footer_offers-form input{
+    font-size:13.5px;
+    border-radius:5px;
+}
+
+.footer-button{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+    border-radius:5px;
+    padding:7px 6px;;
+    margin-left:10px;
+    font-size:12px;
+
+}
+
+.footer-button:hover{
+    border-color:orange;
+    color:orange;
+}
+
+.footer_media-icon i.basket{
+    background:rgb(235, 158, 16);
+    padding:8px;
+    border-radius:6px;
+    color:white;
+    font-size:20px;
+}
+
+.footer_col-form{
+    padding-right:50px;
+}
+
+.footer_app-links{
+    padding:0 !important;
+    margin-top:-4px;
+}

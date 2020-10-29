@@ -1,0 +1,32 @@
+.section-wrapper {
+    background: white;
+    margin-top: 20px;
+  }
+  
+  .section__header {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+    background: ;
+    align-items: center;
+    border-bottom:0.5px solid rgb(240, 240, 240);
+  }
+  
+  .section__header h5 {
+    flex: 1;
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .section__header span {
+    font-size: 13px;
+    color:orange;
+    font-weight:600;
+  }
+  .section__header a:hover{
+    text-decoration: none;
+  }
+  
+  .section__header span i{
+    margin-left:8px;
+  }

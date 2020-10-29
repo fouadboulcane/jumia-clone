@@ -1,0 +1,26 @@
+
+.breadcrumb-bar{
+    font-size:12px !important;
+}
+
+.product-infos{
+    padding:10px 10px;
+    margin:0;
+}
+
+.product-like{
+    font-size:20px;
+}
+.product-like i{
+    padding:8px;
+    margin-top:-4px;
+    margin-right:-16px;
+    color:orange;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.product-like i:hover{
+    background:rgba(255, 188, 63, 0.3);
+}
+
+.orange{color:orange}

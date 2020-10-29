@@ -1,0 +1,21 @@
+
+
+.customer-page .list-group-item{
+    font-size:13px;
+    border:none;
+    display:flex;
+    align-items:center;
+    cursor: pointer;
+}
+
+.customer-page .list-group-item:hover{
+    font-weight:600;
+    background:rgb(243, 242, 242);
+}
+
+.customer-page .list-group-item span{
+    margin-top:2px;
+
+}
+
+
