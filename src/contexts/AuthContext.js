@@ -35,11 +35,11 @@ export function AuthProvider({ children }) {
                     .then(() => {
                         setCurrentUsername(displayName)
                         setUserData({ lastName: lastName, phone: phone, newsLetterCheck: newsLetterCheck })
-                        // var docums = {
-                        //     lastName: lastName,
-                        //     phone: phone
-                        // }
-                        // localStorage.setItem("userInfos", JSON.stringify(docums))
+                        var docums = {
+                            lastName: lastName,
+                            phone: phone
+                        }
+                        localStorage.setItem("userInfos", JSON.stringify(docums))
                     })
 
             })
@@ -83,7 +83,13 @@ export function AuthProvider({ children }) {
             lastName: lastName,
             phone: phone
         })
-
+            .then(() => {
+                var docums = {
+                    lastName: lastName,
+                    phone: phone
+                }
+                localStorage.setItem("userInfos", JSON.stringify(docums))
+            })
     }
 
 
@@ -127,7 +133,7 @@ export function AuthProvider({ children }) {
 
         })
 
-        return unsubscribe
+        return () => unsubscribe()
     }, [])
 
     const value = {

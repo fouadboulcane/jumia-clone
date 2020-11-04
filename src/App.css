@@ -30,3 +30,9 @@ Link button:hover{
 .bg-orange{
   background:orange
 }
+
+.remove-def-styles{
+  text-decoration:none;
+  color:black;
+  
+}

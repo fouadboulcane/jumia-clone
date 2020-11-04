@@ -20,8 +20,6 @@ function Header() {
     const [error, setError] = useState()
     const history = useHistory()
 
-    //console.log("email: " + currentUser?.email, "username: " + currentUser?.displayName)
-
     useEffect(() => {
         setCurrentUsername(currentUser?.displayName)
     }, [currentUser?.displayName])

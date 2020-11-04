@@ -8,7 +8,9 @@ import { useAuth } from '../../../contexts/AuthContext';
 function AccountSection() {
     const [{ user, userInfos }, dispatch] = useStateValue();
     const { currentUser, updateDisplayName, updateUserInfos } = useAuth()
+
     const currentUserInfosRaw = localStorage.getItem("userInfos")
+
     const currentUserInfos = JSON.parse(currentUserInfosRaw)
     const [firstName, setFirstName] = useState(currentUser?.displayName)
     const [lastName, setLastName] = useState(currentUserInfos?.lastName)
@@ -21,29 +23,40 @@ function AccountSection() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        updateDisplayName(firstName)
-        updateUserInfos(lastName, phone)
+        setError('')
+        setMessage('')
+        if (firstName && lastName && phone) {
+            try {
+                updateDisplayName(firstName)
+                updateUserInfos(lastName, phone)
+                setMessage('Informations updated successfully')
+            } catch {
+                setError('Couldnt save informations')
+            }
+        }
+
     }
 
     return (
         <div className="account-section">
             <h5>Informations personnelles</h5>
-
+            {error && <div className="alert alert-danger" role="alert">{error}</div>}
+            {message && <div className="alert alert-primary" role="alert">{message}</div>}
             <form onSubmit={handleSubmit} className="mt-3">
                 <div className="row mt-4">
                     <div className="col">
-                        <TextField className="logiput col" defaultValue={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                        <TextField className="logiput col" label="Prénom" defaultValue={firstName} onChange={(e) => setFirstName(e.target.value)} />
                     </div>
                     <div className="col">
-                        <TextField className="logiput col" defaultValue={lastName} onChange={(e) => setLastName(e.target.value)} />
+                        <TextField className="logiput col" label="Nom" defaultValue={lastName} onChange={(e) => setLastName(e.target.value)} />
                     </div>
                 </div>
                 <div className="row mt-4 mb-4">
                     <div className="col">
-                        <TextField disabled className="logiput col" value={currentUser?.email} />
+                        <TextField disabled className="logiput col" label="Email" value={currentUser?.email} />
                     </div>
                     <div className="col-6">
-                        <TextField className="logiput col" defaultValue={phone} onChange={(e) => setPhone(e.target.value)} />
+                        <TextField className="logiput col" label="Phone" defaultValue={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                 </div>
                 <Button

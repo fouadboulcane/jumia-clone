@@ -4,6 +4,7 @@ import EmptyCartPage from './empty-cart-page';
 import CartItem from './cart-item'
 import { useStateValue } from '../../StateProvider';
 import { getBasketTotal, numbersWithSpaces } from '../../reducer'
+import { Link } from 'react-router-dom';
 
 function CartPage() {
     const [{ basket }, dispatch] = useStateValue()
@@ -31,11 +32,11 @@ function CartPage() {
                                 ))}
 
 
-                                <div class="row mt-3">
-                                    <div class="col text-right">
+                                <div className="row mt-3">
+                                    <div className="col text-right">
                                         <span><b>Total : {numbersWithSpaces(getBasketTotal(basket))} DA</b></span>
                                         <br />
-                                        <span class="mt-2 text-muted"><small>Frais de livraison non inclus pour le moment</small></span>
+                                        <span className="mt-2 text-muted"><small>Frais de livraison non inclus pour le moment</small></span>
                                     </div>
                                 </div>
 
@@ -52,16 +53,22 @@ function CartPage() {
                             <div className="col-9 m-auto d-flex p-0">
                                 <div className="col-5"></div>
                                 <div className="col-7 d-flex p-0">
-                                    <Button
+
+                                    <Link
+                                        to="/product-list"
+                                        component={Button}
                                         variant="contained"
                                         className="login-button mr-2"
                                         color="primary"
-                                    >POURSUIVRE VOS ACHATS</Button>
-                                    <Button
+                                    >POURSUIVRE VOS ACHATS</Link>
+
+                                    <Link
+                                        to="/checkout"
+                                        component={Button}
                                         variant="contained"
                                         className="login-button login-basic"
                                         color="primary"
-                                    >FINALISER VOTRE COMMANDE</Button>
+                                    >FINALISER VOTRE COMMANDE</Link>
                                 </div>
                             </div>
                         </div>

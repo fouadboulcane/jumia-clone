@@ -5,7 +5,7 @@ import { getItemTotal, numbersWithSpaces } from '../../reducer'
 
 function CartItem({ item, quantity }) {
     const [{ basket, favouritedItems }, dispatch] = useStateValue()
-    const { id, title, price, rating } = item
+    const { id, title, price, rating, imageUrl } = item
     const [favourited, setFavourited] = useState(false)
 
     const addToBasket = () => {
@@ -15,8 +15,8 @@ function CartItem({ item, quantity }) {
                 id: id,
                 title: title,
                 price: price,
-                rating: rating
-
+                rating: rating,
+                imageUrl: imageUrl
             }
         })
         localStorage.setItem("basket", JSON.stringify(basket))
@@ -35,7 +35,8 @@ function CartItem({ item, quantity }) {
                 id: id,
                 title: title,
                 price: price,
-                rating: rating
+                rating: rating,
+                imageUrl: imageUrl
             }
         })
     }
@@ -61,7 +62,7 @@ function CartItem({ item, quantity }) {
         <div className="row tabrow bg-white mt-2">
             <div className="col-7 row h-100 ">
                 <div className="col-auto pl-1 pr-0 pt-2">
-                    <img src="http://via.placeholder.com/75x75" />
+                    <img src={imageUrl} width="75px" height="75px" />
                 </div>
                 <div className="col">
                     <div className="mt-1"><span className="text-muted my-auto"><small>Vendeur</small></span></div>

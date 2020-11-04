@@ -1,7 +1,7 @@
 import { Checkbox, FormControl, FormControlLabel, IconButton, Input, InputAdornment, InputLabel, TextField } from '@material-ui/core'
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './login.css'
 import { auth } from "../../firebase";
 import { useHistory } from 'react-router-dom';
@@ -17,15 +17,23 @@ function Login() {
     const [values, setValues] = useState({
         showPassword: false,
     })
-    const { login } = useAuth()
+    const { login, currentUser } = useAuth()
+
+
+    useEffect(() => {
+        if (currentUser) {
+            history.push('/')
+        }
+    }, [currentUser])
 
     async function handleSubmit(e) {
         e.preventDefault()
+        setLoading(true)
+        // login(email, password)
 
         try {
             setError("")
-            setLoading(true)
-            await login(email, password)
+            login(email, password)
             history.push('/')
         } catch {
             setError("Failed to log in")
@@ -33,15 +41,6 @@ function Login() {
 
         setLoading(false)
     }
-
-    // const signIn = e => {
-    //     e.preventDefault();
-    //     auth.signInWithEmailAndPassword(email, password).then(auth => {
-    //         history.push('/')
-    //         console.log('you are connected')
-    //     })
-    //         .catch(error => alert(error.message))
-    // }
 
     const handleClickShowPassword = () => {
         setValues({ ...values, showPassword: !values.showPassword });

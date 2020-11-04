@@ -8,7 +8,7 @@ import './customer-page.css'
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
 import { auth } from '../../firebase';
-import PasswordResetSection from './password-reset-section';
+import PasswordResetSection from './sections/password-reset-section';
 
 import { BrowserRouter as Router, Switch, Route, useRouteMatch } from "react-router-dom";
 import PrivateRoute from '../../PrivateRoute'
@@ -61,9 +61,11 @@ function CustomerPage() {
                                 <div className="list-group-item">
                                     <span>Adresses</span>
                                 </div>
-                                <div className="list-group-item">
-                                    <span>Modifier votre mot de passe</span>
-                                </div>
+                                <Link to={`${url}/password-reset`} style={{ textDecoration: 'none', color: 'black' }}>
+                                    <div className="list-group-item">
+                                        <span>Modifier votre mot de passe</span>
+                                    </div>
+                                </Link>
                                 <div className="list-group-item">
                                     <span>Préférences de communication</span>
                                 </div>
@@ -77,7 +79,7 @@ function CustomerPage() {
                     <div className="col-9 bg-white p-4">
                         <Switch>
                             <PrivateRoute exact path={path} component={AccountSection} />
-                            {/* <PrivateRoute path={`${path}/account`} component={PasswordResetSection} /> */}
+                            <PrivateRoute exact path={`${path}/password-reset`} component={PasswordResetSection} />
                         </Switch>
                     </div>
                 </div >

@@ -1,7 +1,7 @@
 import { Button, Checkbox, FilledInput, FormControl, FormControlLabel, IconButton, Input, InputAdornment, InputLabel, TextField } from '@material-ui/core'
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 import DeleteIcon from '@material-ui/icons/Delete';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { auth, db } from '../../firebase'
 import './register.css'
@@ -18,11 +18,18 @@ function Register() {
     const [values, setValues] = useState({
         showPassword: false,
     })
-    const { signup } = useAuth()
+    const { signup, currentUser } = useAuth()
     const history = useHistory()
     const [message, setMessage] = useState("")
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (currentUser) {
+            history.push('/')
+        }
+    }, [currentUser])
+
 
     async function handleSubmit(e) {
         e.preventDefault()
